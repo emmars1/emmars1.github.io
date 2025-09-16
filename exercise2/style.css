@@ -1,0 +1,34 @@
+body {
+    width: 50%;
+    margin: 10px 50px 20px;
+    line-height: 30px;
+    background-color: black;
+    color:white;
+    font-size: small;
+    font-family:"GT Haptik Trial Lt Ob";
+        src: url("/Users/emma/Documents/GitHub/emmars1.github.io/exercise2/assets/GT-Haptik-Light-Oblique.woff2") format("woff");
+
+}
+ h1 {
+    color:white;
+    font-size:1000%;
+    line-height: 90px;
+    font-family:"Homoneta-Regular";
+        src: url("/Users/emma/Documents/GitHub/emmars1.github.io/exercise2/assets/Homoneta-Regular.woff2") format("woff");
+ }
+ h3 {
+    color:white;
+    font-size:300%;
+    line-height: 90px;
+    font-family:"Homoneta-Regular";
+        src: url("/Users/emma/Documents/GitHub/emmars1.github.io/exercise2/assets/Homoneta-Regular.woff2") format("woff");
+ }
+ p {
+    font-size: 30px;
+    color:white;
+ }
+ .nextbutton {
+    color:white;
+    font-size:300%;
+    text-decoration: none;
+ }
