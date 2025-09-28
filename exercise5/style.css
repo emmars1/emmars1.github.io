@@ -1,0 +1,72 @@
+body {
+        margin: 0;
+        padding: 50px;
+        background: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+}
+
+/* container for each letter */
+.wrapper {
+        position: relative;
+        min-width: 60px;
+        margin-right: 10px;
+        height: 100px;
+}
+
+/* each part of letter absolutely positioned in wrapper */
+.wrapper div {
+        position: absolute;
+}
+
+@keyframes wiggle {
+        0% { transform: rotate(0deg); }
+        80% { transform: rotate(0deg); }
+        85% { transform: rotate(10deg); }
+        95% { transform: rotate(-10deg); }
+        100% { transform: rotate(0deg); }
+}
+
+#letter-e4:hover {
+        animation: wiggle 1s infinite;
+}
+
+#letter-e4:hover .circle {
+        border: 5px solid green;
+}
+
+#letter-e4:hover .middle {
+        background: green;
+}
+
+#letter-e4.wrapper {
+        min-width: 70px;
+}
+
+#letter-e4 .circle {
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 60px;
+        border: 5px solid red;
+        border-radius: 50%;
+        background: transparent;
+}
+
+#letter-e4 .middle {
+        background: red;
+        top: 60px;
+        left:2px;
+        width: 64px;
+        height:5px;
+}
+
+#letter-e4 .cutout {
+        background: white;
+        right: 0;
+        top: 65px;
+        width: 10px;
+        height: 60px;
+}
