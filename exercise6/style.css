@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
+body {
+    font-family: "Zalando Sans", sans-serif;
+    background-color: #fff;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+/* this is better for sizing vvv */
+* {box-sizing: border-box;}
+
+body.dark {background-color: #292c35;}
+
+h1 {
+    font-weight: bold;
+}
+
+body.dark h1, body.dark {color: #fff;}
+
+#darkModeToggle {
+    display: flex;
+    justify-content: right;
+}
+
+#darkModeToggle div {
+    float: left;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #f1edeb;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.dark .checkbox-label { background-color: #000000; }
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .checkbox-label .ball {
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+button.accordion {
+    width: 100%;
+    background-color: #ffffff;
+    font-family: "Zalando Sans", sans-serif;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+body.dark button.accordion {
+    background-color: #292c35;
+    color: #ffffff;
+    transition: background-color 0.2s linear;
+}
+
+button.accordion:after {
+    font-family: FontAwesome;
+    content: "\f078";
+    font-family: "fontawesome";
+    font-size: 18px;
+    float: right;
+}
+
+button.accordion.is-open:after {
+    content: "\f077";
+}
+
+button.accordion:hover,
+button.accordion.is-open {
+    background-color: #ddd;
+}
+
+body.dark button.accordion:hover,
+body.dark button.accordion.is-open {
+    background-color: #17181d;
+}
+
+.accordion-content {
+    background-color: white;
+    border: 1px solid #F5F5F5;
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+}
+
+body.dark .accordion-content {
+    background-color: #292c35;
+    border: 1px solid #454a5a;
+    transition: background-color 0.2s linear;
+}
