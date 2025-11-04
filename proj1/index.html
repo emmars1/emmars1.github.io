@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>emma's bookmark tabs - home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="index.html">home</a>
+  <a href="about.html">about</a>
+</nav>
+
+<hr>
+
+<div class="container">
+  <h1>emma's<br>bookmark<br>tabs</h1>
+
+  <p style="margin-bottom: 200px">welcome to <span class="highlight">emma's unofficial bookmark archive</span>, where i keep<br>
+    all of my favorite websites for safekeeping.  please enjoy!</p>
+
+  <div id="categoryFilters">
+    <h3>Filter by Category:</h3>
+    <select id="categorySelect">
+      <option value="">Show All</option>
+    </select>
+  </div>
+
+  <div id="bookmark-list">
+    <!-- for CSS testing, will be constructed in Javascript
+    <div class="bookmark-item">
+      <div class="bookmark-info">
+        <a href="https://www.someurl.com" target="_blank" class="bookmark-url"><i class="fa-solid fa-arrow-up-right-from-square"></i> Some Website Description</a>
+        <span class="category-label">(category: fun)</span>
+      </div>
+    </div>-->
+  </div>
+
+</div>
+
+<hr>
+
+<script src="bookmarkApp.js"></script>
+</body>
+</html>
