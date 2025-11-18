@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>emma's live streams</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="main-content">
+    <h1 id="videoTitle"></h1>
+    <div class="video-container" id="videoContainer"></div>
+    <div class="video-info">
+      <p id="videoDescription"></p>
+    </div>
+  </div>
+
+  <!--  testing css  -->
+  <!-- div class="main-content">
+    <h1 id="videoTitle">Moomin Live!</h1>
+    <div class="video-container" id="videoContainer">
+        <iframe src="https://www.youtube.com/embed/f8Mt85VmBD0?autoplay=1&amp;mute=1" title="Moomin Live!" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+        </iframe>
+      </div>
+    <div class="video-info">
+      <p id="videoDescription">Watch full episodes of your favourite Moomin adventures anytime!</p>
+    </div>
+  </div -->
+
+  <div class="sidebar">
+    <h2><svg class="live-indicator" width="20" height="20" viewBox="0 0 16 16">
+      <circle cx="8" cy="8" r="6" class="live-circle" />
+    </svg>LIVE Now!</h2>
+    <ul class="channel-list" id="channelList"></ul>
+  </div>
+</div>
+
+
+<script src="liveStreamsApp.js"></script>
+</body>
+</html>
