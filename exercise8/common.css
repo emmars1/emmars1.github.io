@@ -1,0 +1,43 @@
+/* css that's common to all patterns */
+body {
+    margin: 0;
+    padding: 20px;
+    background: #222222;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    margin: 10px auto;
+    max-width: 1200px;
+    padding: 8px 0 20px 0;
+    color: #ccc;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 8px 25px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+nav a:hover, nav a.active {
+    color: #fff;
+    background-color: #333;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #999;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin: 0px -50vw;
+}
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+}

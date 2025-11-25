@@ -1,0 +1,24 @@
+/* css specific to the checkerboard pattern */
+.grid {
+    display: inline-block;
+    background: #000000;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #444;
+}
+
+.row {
+    display: flex;
+    line-height: 0;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    border-radius: 4px;
+}
+
+.circle {
+    border-radius: 50%;
+}

@@ -1,0 +1,30 @@
+/* css specific to the text-based pattern */
+.pattern-box {
+    background: #000000;
+    padding: 40px;
+    border-radius: 12px;
+    display: inline-block;
+    max-width: 800px;
+    border: 1px solid #444;
+}
+
+.text-row {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-item {
+    font-weight: bold;
+    color: #667eea;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.text-item:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
