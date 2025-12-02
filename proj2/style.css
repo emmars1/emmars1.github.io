@@ -1,4 +1,4 @@
-/* start fresh */
+/* default reset across all elements */
 * {
     margin: 0;
     padding: 0;
@@ -6,142 +6,206 @@
 }
 
 body {
-    font-family: "Roboto Mono", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    line-height: 1.6;
-    padding: 20px;
-    background-color: #1a1a1a;
-    color: #fff;
+    font-family: "IBM Plex Sans Condensed", sans-serif; /* cool looking Google font */
+    background-color: #000000;
 }
+
 .container {
-    max-width: 1400px;
+    max-width: 1400px; /* limit width of player so video control buttons aren't pushed out of view  */
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 20px;
 }
 
-.sidebar {
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.sidebar h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #ff4444;
-}
-
-.channel-list {
-    list-style: none;
-}
-
-.channel-item {
-    background-color: #3a3a3a;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.channel-item:hover {
-    background-color: #4a4a4a;
-    transform: translateX(5px);
-}
-
-.channel-item.active {
-    border-color: #ff4444;
-    background-color: #4a4a4a;
-}
-
-.channel-title {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-.channel-label {
-    font-weight: normal;
-    font-size: 0.8em;
-}
-
-.main-content {
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.video-info {
-    margin: 20px;
+header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 16px;
+    color: #1f2937;
 }
 
-.video-info p {
-    color: #ccc;
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ef4444;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-weight: 600;
     font-size: 14px;
-    line-height: 20px;
+}
+
+.live-dot {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #fff;
 }
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
     overflow: hidden;
-    background-color: #000;
-    border-radius: 8px;
+    padding-bottom: 56.25%;
+    width: 100%;
 }
 
-.video-container iframe {
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+/* when on mobile screens, stack video-info and control-section elements vertically */
+@media (min-width: 768px) {
+    .bottom-section {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+#youtube-player {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.video-info {
+    padding: 24px;
+    flex: 1;
+    min-height: 195px;
+}
+
+.video-info-header {
+    margin-bottom: 8px;
+}
+
+.video-info h2 {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.video-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.video-info p {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+    max-width: 640px;
+}
+
+.controls-section {
+    padding: 15px;
+    flex-shrink: 0;
+    min-height: 195px;
+}
+
+/* a grid seemed easiest to arrange control buttons, some cells filled with buttons, some empty spaces */
+.controls-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr auto;
+    gap: 6px 14px;
+}
+
+/* common grid cell styles */
+.controls-container .cell {
+    display: flex;
+    justify-content: center;  /* horizontal centering */
+    align-items: center;      /* vertical centering */
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* common button styles */
+button {
+    display: flex;
+    width: 35px;
+    height: 35px;
     border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 1px solid #ffffff;
+    background-color: transparent;
 }
 
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-    }
-
-    .sidebar {
-        order: 2;
-    }
-
-    .main-content {
-        order: 1;
-    }
+/* use red buttons for paused and muted states */
+.btn-red {
+    background-color: #ef4444;
+    border: 1px solid #ef4444;
 }
 
-.live-indicator {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 8px;
-    transform: translateY(-2px);
+.btn-red:hover {
+    background-color: #dc2626;
+    border: 1px solid #dc2626;
 }
 
-.live-circle {
-    fill: #ff4444;
-    stroke: #ff4444;
-    stroke-width: 1;
-    animation: pulse-fill 2s ease-in-out infinite;
+/* default for all svg icons (sourced from heroicons) */
+.icon {
+    width: 20px;
+    height: 20px;
+}
+/* my channel specific theming, body class set by updateDisplay function  */
+body.moomin {
+    background-color: #2D82B6;
 }
 
-@keyframes pulse-fill {
-    0%, 100% {
-        fill-opacity: 1;
-    }
-    50% {
-        fill-opacity: 0.3;
-    }
+body.gojira {
+    background-color: #000000;
+}
+
+body.epic {
+    background-color: #790601;
+}
+
+body.total-drama {
+    background-color: #718448;
+}
+
+body.boondocks {
+    background-color: #838B94;
+}
+
+body.ebhc {
+    background-color: #2D2D57;
+}
+
+body.moomin {
+    background-color: #256E53;
 }
