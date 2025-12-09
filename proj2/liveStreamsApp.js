@@ -1,21 +1,21 @@
 const streams = [
     {
-        title: "GODZILLA Marathon!",
-        description: "It's a Godzilla movie Marathon including Monsters Attack (1969), Ebirah, Horror of the Deep (1966), Invasion of Astro-Monster (1965), Terror of Mechagodzilla (1975), The War of the Gargantuas (1966).",
-        videoId: "1KOrtKvwwDg",
-        theme: "gojira"
-    },
-    {
         title: "Epic Adventure!",
         description: "Join us for an epic journey through the Land of Ooo with Finn, Jake, and all your favorite characters! This livestream features the best moments and episodes from the beloved series, Adventure Time. Whether you're a long-time fan or new to the show, this compilation is sure to bring back memories and create new ones.",
         videoId: "uZkaJ3e9nfY",
         theme: "epic"
     },
     {
-        title: "Everybody Hates Chris",
-        description: "\"Everybody Hates Chris\" is a comedy series based on Chris Rock's teenage years in 1980s Brooklyn. It follows young Chris navigating high school, family life, and neighborhood challenges with a humorous twist. The show combines Rock's real-life experiences with comedic moments from his struggles and triumphs.",
-        videoId: "h22t62fcqO4",
-        theme: "ebhc"
+        title: "The Amazing World of Gumball Live!",
+        description: "Gumball, the amusing blue cat with a giant head and his best buddy Darwin, a pet goldfish who sprouted legs, step up the hilarity and hijinks in Cartoon Network's comedy series, The Amazing World of Gumball. The BAFTA award-winning series tells the story of an extra-ordinary suburban family who just happen to live in an ordinary town.",
+        videoId: "nIyaCRNwxhU",
+        theme: "gumball"
+    },
+    {
+        title: "GODZILLA Marathon!",
+        description: "It's a Godzilla movie Marathon including Monsters Attack (1969), Ebirah, Horror of the Deep (1966), Invasion of Astro-Monster (1965), Terror of Mechagodzilla (1975), The War of the Gargantuas (1966).",
+        videoId: "1KOrtKvwwDg",
+        theme: "gojira"
     },
     {
         title: "Total Drama LIVE!",

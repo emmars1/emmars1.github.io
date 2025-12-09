@@ -11,105 +11,102 @@
 </head>
 <body>
 
-  <header>
-    <h1>The Live Site!</h1>
-    <div class="header-right">
-      <div class="live-indicator">
-        <div class="live-dot"></div>
-        <span>CURRENTLY LIVE</span>
-      </div>
+<header>
+  <div class="live-indicator">
+    <div class="live-dot"></div>
+    <span>CURRENTLY LIVE</span>
+  </div>
+</header>
+
+<div class="container">
+  <div class="main-content">
+    <div class="video-container">
+      <div id="youtube-player"></div>
     </div>
-  </header>
 
-  <div class="container">
-    <div class="main-content">
-      <div class="video-container">
-        <div id="youtube-player"></div>
+    <div class="bottom-section">
+      <div class="video-info">
+        <div class="video-info-header">
+          <h2>CURRENTLY WATCHING</h2>
+        </div>
+        <h3 id="current-title"></h3>
+        <p id="current-description"></p>
       </div>
 
-      <div class="bottom-section">
-        <div class="video-info">
-          <div class="video-info-header">
-            <h2>CURRENTLY WATCHING</h2>
+      <div class="controls-section">
+
+        <div class="controls-container">
+          <!-- Play/Pause button-->
+          <div class="cell">
+            <button style="display: none" id="btn-play-pause" title="Play/Pause">
+              <svg class="icon" id="play-pause-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 5.25v13.5m-7.5-13.5v13.5"/>
+              </svg>
+            </button>
           </div>
-          <h3 id="current-title"></h3>
-          <p id="current-description"></p>
-        </div>
-
-        <div class="controls-section">
-
-          <div class="controls-container">
-            <!-- Play/Pause button-->
-            <div class="cell">
-              <button id="btn-play-pause" title="Play/Pause">
-                <svg class="icon" id="play-pause-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 5.25v13.5m-7.5-13.5v13.5"/>
-                </svg>
-              </button>
-            </div>
-            <!-- Mute/Unmute button-->
-            <div class="cell">
-              <button class="btn-red" id="btn-mute" title="Mute/Unmute">
-                <svg class="icon" id="mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
-                </svg>
-              </button>
-            </div>
-            <!-- Random Channel button-->
-            <div class="cell">
-              <button id="btn-random" title="Random Channel">
-                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
-                </svg>
-              </button>
-            </div>
-            <!-- Channel Up button-->
-            <div class="cell">
-              <button id="btn-ch-up" title="Channel Up">
-                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-                </svg>
-              </button>
-            </div>
-            <!-- Volume Up button-->
-            <div class="cell">
-              <button id="btn-vol-up" title="Volume Up">
-                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-                </svg>
-              </button>
-            </div>
-            <!-- empty grid cells-->
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell">CH</div>
-            <div class="cell">VOL</div>
-            <!-- more empty grid cells-->
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Channel Down button-->
-            <div class="cell">
-              <button id="btn-ch-down" title="Channel Down">
-                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                </svg>
-              </button>
-            </div>
-            <!-- Volume Down button-->
-            <div class="cell">
-              <button id="btn-vol-down" title="Volume Down">
-                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                </svg>
-              </button>
-            </div>
+          <!-- Mute/Unmute button-->
+          <div class="cell">
+            <button class="btn-red" id="btn-mute" title="Mute/Unmute">
+              <svg class="icon" id="mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
+              </svg>
+            </button>
+          </div>
+          <!-- Random Channel button-->
+          <div class="cell">
+            <button id="btn-random" title="Random Channel">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+              </svg>
+            </button>
+          </div>
+          <!-- Channel Up button-->
+          <div class="cell">
+            <button id="btn-ch-up" title="Channel Up">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+          <!-- Volume Up button-->
+          <div class="cell">
+            <button id="btn-vol-up" title="Volume Up">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+          <!-- empty grid cells-->
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell">CH</div>
+          <div class="cell">VOL</div>
+          <!-- more empty grid cells-->
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <!-- Channel Down button-->
+          <div class="cell">
+            <button id="btn-ch-down" title="Channel Down">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+          </div>
+          <!-- Volume Down button-->
+          <div class="cell">
+            <button id="btn-vol-down" title="Volume Down">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <script src="liveStreamsApp.js"></script>
 </body>
